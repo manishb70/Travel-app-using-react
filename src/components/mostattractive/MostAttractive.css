@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  .image-absolute {
+    position: static !important;
+    transform: rotate(-45deg);
+    width: 200px !important;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline-item {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
