@@ -56,7 +56,7 @@ const November = () => {
             UPCOMING TOURS
           </h1>
           <div className="bg-white text-black bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-lg">
-            <h2 className="text-lg md:text-xl font-semibold">MARCH</h2>
+            <h2 className="text-lg md:text-xl font-semibold">November</h2>
           </div>
           <p className="mt-3 text-sm font-medium tracking-wide">
             SPECIALLY DESIGNED FOR SENIOR CITIZENS

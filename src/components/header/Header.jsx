@@ -76,7 +76,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="relative min-h-screen     flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen   mt-12  flex flex-col justify-center overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-[#2FA8B9]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -158,7 +158,7 @@ const Header = () => {
               {/* Decorative Frame */}
               <div className="absolute -inset-4 bg-gradient-to-r from-[#2FA8B9]/20 to-[#42a8bb]/20 rounded-3xl blur-xl"></div>
               <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                <Slider className="" />
+                <Slider className="hero-swiper" />
               </div>
             </div>
           </div>

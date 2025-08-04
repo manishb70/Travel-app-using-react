@@ -2,10 +2,6 @@ import React from 'react';
 import { Calendar, Users, MapPin, Eye } from 'lucide-react';
 import img3 from "../../assets/images/himalaya/himalaya.jpg";
 const April = () => {
-    useEffect(() => {
-      // Scroll to top when component loads (reload/refresh)
-      window.scrollTo(0, 0);
-    }, []);
   
   const tours = [
     {
@@ -61,7 +57,7 @@ const April = () => {
             UPCOMING TOURS
           </h1>
           <div className="bg-white text-black bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-lg">
-            <h2 className="text-lg md:text-xl font-semibold">MARCH</h2>
+            <h2 className="text-lg md:text-xl font-semibold">April</h2>
           </div>
           <p className="mt-3 text-sm font-medium tracking-wide">
             SPECIALLY DESIGNED FOR SENIOR CITIZENS
