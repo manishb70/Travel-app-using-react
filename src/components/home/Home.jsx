@@ -15,6 +15,11 @@ const Home = () => {
     const { activeSlideIndex } = React.useContext(MyContext);
 
 
+         React.useEffect(() => {
+            // Scroll to top when component loads (reload/refresh)
+             window.scrollTo({ top: 0, behavior: "smooth" });
+          }, []);
+
     const handleClass = (activeSlideIndex) => {
         switch (activeSlideIndex) {
             case 0:
@@ -34,7 +39,7 @@ const Home = () => {
 
 
     return (
-        <div className={` ${classChange}     `}  id="home">
+        <div   id="home">
          
 
             <HeroSlider />

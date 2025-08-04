@@ -41,7 +41,7 @@ const Slider = () => {
 
 
     return (
-        <div  className="mr-14 shadow-xl ">
+        <div id="slidermain" className="mr-14 hero-swiper shadow-xl ">
 
 
             <Swiper

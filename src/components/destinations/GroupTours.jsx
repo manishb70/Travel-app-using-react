@@ -143,7 +143,7 @@ const GroupTours = () => {
                 {tour.name}
               </h3>
               <p className="text-gray-200 mb-4 text-sm">
-                {tour.description}
+                {tour.description}  
               </p>
               <Link to={"tours"} className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-200 text-sm font-medium">
                 Explore Tours
@@ -155,7 +155,7 @@ const GroupTours = () => {
 
       {/* Call to Action */}
       <div className="text-center mt-12">
-        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+        <button className="bg-gradient-to-r bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
           View All Tours
         </button>
       </div>

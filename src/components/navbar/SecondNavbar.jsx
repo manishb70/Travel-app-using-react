@@ -11,92 +11,79 @@ import {
     X,
     ChevronDown,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const FancyNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [mobileDropdown, setMobileDropdown] = useState({
-        pages: false,
-        blog: false,
-    });
+    const [mobileDropdown, setMobileDropdown] = useState({ pages: false, blog: false   ,tours: false});
+    const location = useLocation();
+
+       const [isScrolled, setIsScrolled] = useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    const navLinks = [
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        { name: "Contact", path: "/contact" },
+    ];
+
+    const monthLinks = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    const isActive = (path) => location.pathname === path;
 
     return (
-        <header className="bg-white shadow-md w-full fixed top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+       isScrolled ? "bg-white shadow-md " : "bg-white/0 text-white "                                                        
+    }`}>
+            <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
                     <Compass className="text-red-500" size={28} />
-                    <h1 className="text-xl font-bold text-black">Travelo</h1>
-                    <div className="h-6 w-px bg-gray-300 mx-4 hidden lg:block"></div>
+                    <h1 className="text-xl font-bold text-black">Mice Travelo</h1>
                 </div>
 
-                {/* Hamburger Menu */}
-                <div className="lg:hidden">
-                    <button
+                {/* Desktop Nav */}
+                <nav className="hidden lg:flex gap-8 font-medium">
+                    {navLinks.map(link => (
+                        <Link
+                            key={link.name}
+                            to={link.path}
+                            className={`transition hover:text-red-500 ${isActive(link.path) ? "text-red-500" : "text-black"}`}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
 
-                        className="text-red-500"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
-
-                {/* Desktop Navigation */}
-                <nav className="hidden lg:flex gap-8 text-black font-medium relative">
-                    <Link to={"/"} className="hover:text-red-500 transition">Home</Link>
-                    <a href="#" className="hover:text-red-500 transition">About</a>
-                    <a href="#" className="hover:text-red-500 transition">Destination</a>
-
-                    {/* Pages Dropdown */}
-                    {/* Tours Dropdown - Desktop */}
-                    <div className="group relative cursor-pointer">
-                        <div className="flex items-center gap-1 hover:text-red-500 transition">
+                    {/* Tours Dropdown */}
+                    <div className="relative group cursor-pointer">
+                        <div className="flex items-center gap-1 text-black hover:text-red-500 transition">
                             Tours <ChevronDown size={16} />
                         </div>
-                        <div className="absolute left-0 top-full mt-2 w-40  backdrop-blur-md text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
-                            {[
-                                "January",
-                                "February",
-                                "March",
-                                "April",
-                                "May",
-                                "June",
-                                "July",
-                                "August",
-                                "September",
-                                "October",
-                                "November",
-                                "December",
-                            ].map((month) => (
+                        <div className="absolute top-full left-0 w-40 mt-2 backdrop-blur-md bg-black/60 text-white rounded-md shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                            {monthLinks.map((month) => (
                                 <Link
-                                    to={`/${month}`}
-                                    href="#"
                                     key={month}
-                                    Link
-                                    className="block px-4 py-2 hover:bg-white hover:text-green-900 uppercase transition"
+                                    to={`/${month.toLowerCase()}`}
+                                    className="block px-4 py-2 uppercase hover:bg-white hover:text-green-900 transition"
                                 >
                                     {month}
                                 </Link>
                             ))}
                         </div>
                     </div>
-
-
-                    {/* Blog Dropdown */}
-                    <div className="group relative cursor-pointer">
-                        <div className="flex items-center gap-1 hover:text-red-500 transition">
-                            Blog
-                            <ChevronDown size={16} />
-                        </div>
-                        <div className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50">
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Blog Grid</a>
-                            <a href="#" className="block px-4 py-2 hover:bg-gray-100">Blog Details</a>
-                        </div>
-                    </div>
-
-                    <a href="#" className="hover:text-red-500 transition">Contact</a>
                 </nav>
 
-                {/* Right Section */}
+                {/* Right Icons - Desktop */}
                 <div className="hidden lg:flex items-center gap-4">
                     <div className="flex items-center text-sm text-black font-medium gap-2">
                         <PhoneCall className="text-red-500" size={16} />
@@ -104,70 +91,122 @@ const FancyNavbar = () => {
                     </div>
                     <div className="h-6 w-px bg-gray-300 mx-2"></div>
                     <div className="flex gap-3 text-gray-400">
-                        <a href="#"><Instagram className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><Linkedin className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><Facebook className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><GanttChartSquare className="hover:text-red-500" size={18} /></a>
+                        {[Instagram, Linkedin, Facebook, GanttChartSquare].map((Icon, i) => (
+                            <a href="#" key={i} className="hover:text-red-500"><Icon size={18} /></a>
+                        ))}
                     </div>
-                    <div className="bg-red-500 p-2 rounded-l-md cursor-pointer">
-                        <Search className="text-white" size={18} />
-                    </div>
+                    <button className="bg-red-500 p-2 rounded-md text-white">
+                        <Search size={18} />
+                    </button>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="lg:hidden">
+                    <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-red-500">
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </div>
             </div>
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 text-black font-medium">
-                    <a href="#" className="block hover:text-red-500">Home</a>
-                    <a href="#" className="block hover:text-red-500">About</a>
-                    <a href="#" className="block hover:text-red-500">Destination</a>
+                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 text-black font-medium animate-fadeIn">
+                    {navLinks.map(link => (
+                        <Link
+                            key={link.name}
+                            to={link.path}
+                            className={`block hover:text-red-500 ${isActive(link.path) ? "text-red-500" : ""}`}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
 
-                    {/* Pages Mobile Dropdown */}
+                    {/* Tours Dropdown - Mobile */}
+<div>
+    <button
+        onClick={() =>
+            setMobileDropdown({ ...mobileDropdown, tours: !mobileDropdown.tours })
+        }
+        className="flex justify-between items-center w-full hover:text-red-500"
+    >
+        Tours
+        <ChevronDown
+            size={16}
+            className={`${mobileDropdown.tours ? "rotate-180" : ""} transition`}
+        />
+    </button>
+    {mobileDropdown.tours && (
+        <div className="ml-4 mt-2 space-y-2">
+            {[
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ].map((month) => (
+                <Link
+                    key={month}
+                    to={`/${month.toLowerCase()}`}
+                    className="block hover:text-red-500 uppercase"
+                    onClick={() => setIsMenuOpen(false)}
+                >
+                    {month}
+                </Link>
+            ))}
+        </div>
+    )}
+</div>
+
+
+                    {/* Pages Dropdown */}
                     <div>
                         <button
                             onClick={() => setMobileDropdown({ ...mobileDropdown, pages: !mobileDropdown.pages })}
-                            className="flex justify-between items-center w-full hover:text-red-500"
+                            className="flex justify-between w-full hover:text-red-500"
                         >
-                            Pages
-                            <ChevronDown size={16} className={mobileDropdown.pages ? "rotate-180 transition" : "transition"} />
+                            Pages <ChevronDown className={`${mobileDropdown.pages ? "rotate-180" : ""} transition`} size={16} />
                         </button>
                         {mobileDropdown.pages && (
                             <div className="ml-4 mt-2 space-y-2">
-                                <a href="#" className="block hover:text-red-500">Gallery</a>
-                                <a href="#" className="block hover:text-red-500">FAQ</a>
-                                <a href="#" className="block hover:text-red-500">Testimonials</a>
+                                <Link to="/gallery" className="block hover:text-red-500">Gallery</Link>
+                                <Link to="/faq" className="block hover:text-red-500">FAQ</Link>
+                                <Link to="/testimonials" className="block hover:text-red-500">Testimonials</Link>
                             </div>
                         )}
                     </div>
 
-                    {/* Blog Mobile Dropdown */}
+                    {/* Blog Dropdown */}
                     <div>
                         <button
                             onClick={() => setMobileDropdown({ ...mobileDropdown, blog: !mobileDropdown.blog })}
-                            className="flex justify-between items-center w-full hover:text-red-500"
+                            className="flex justify-between w-full hover:text-red-500"
                         >
-                            Blog
-                            <ChevronDown size={16} className={mobileDropdown.blog ? "rotate-180 transition" : "transition"} />
+                            Blog <ChevronDown className={`${mobileDropdown.blog ? "rotate-180" : ""} transition`} size={16} />
                         </button>
                         {mobileDropdown.blog && (
                             <div className="ml-4 mt-2 space-y-2">
-                                <a href="#" className="block hover:text-red-500">Blog Grid</a>
-                                <a href="#" className="block hover:text-red-500">Blog Details</a>
+                                <Link to="/blog-grid" className="block hover:text-red-500">Blog Grid</Link>
+                                <Link to="/blog-details" className="block hover:text-red-500">Blog Details</Link>
                             </div>
                         )}
                     </div>
 
-                    <a href="#" className="block hover:text-red-500">Contact</a>
-
-                    {/* Icons */}
+                    {/* Social Icons */}
                     <div className="flex gap-4 mt-4 text-gray-400">
-                        <a href="#"><Instagram className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><Linkedin className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><Facebook className="hover:text-red-500" size={18} /></a>
-                        <a href="#"><GanttChartSquare className="hover:text-red-500" size={18} /></a>
-                        <div className="bg-red-500 p-2 rounded-md ml-auto cursor-pointer">
-                            <Search className="text-white" size={18} />
-                        </div>
+                        {[Instagram, Linkedin, Facebook, GanttChartSquare].map((Icon, i) => (
+                            <a href="#" key={i} className="hover:text-red-500"><Icon size={18} /></a>
+                        ))}
+                        <button className="bg-red-500 p-2 rounded-md text-white ml-auto">
+                            <Search size={18} />
+                        </button>
                     </div>
                 </div>
             )}
