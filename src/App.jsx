@@ -43,6 +43,11 @@ const App = () => {
   //   </div>
   // );
 
+
+  
+
+
+
   return (
    
       <Routes>
@@ -51,7 +56,7 @@ const App = () => {
           <Route index element={<Home />} /> {/* Default child */}
           <Route path="/tours" element={<Tours />} /> Default child
           <Route path="/upcoming" element={<Upcoming   />} /> Default child
-           <Route path="/book" element={<Upcoming   />} /> Default child
+           <Route path="/book" element={< BookingForm  />} /> Default child
            <Route path="/January" element={<January   />} /> Default child
            <Route path="/February" element={<Feburary   />} /> Default child
            <Route path="/March" element={<March   />} /> Default child

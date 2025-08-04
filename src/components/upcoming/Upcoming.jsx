@@ -1,7 +1,13 @@
 import React from 'react';
 import { Calendar, Users, MapPin, Eye } from 'lucide-react';
 import img3 from "../../assets/images/himalaya/himalaya.jpg";
+
 const Upcoming = () => {
+  useEffect(() => {
+    // Scroll to top when component loads (reload/refresh)
+    window.scrollTo(0, 0);
+  }, []);
+
   const tours = [
     {
       id: 1,

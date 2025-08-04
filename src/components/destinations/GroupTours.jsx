@@ -31,13 +31,13 @@ const GroupTours = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="py-16 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white min-h-screen">
+    <div className="py-16 px-4 bg-white  text-white min-h-screen">
       {/* Title */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 bg-gradient-to-r from-black to-blue-200 bg-clip-text text-transparent">
           Best MICE Group Tours
         </h2>
-        <p className="text-sm md:text-lg max-w-3xl mx-auto text-gray-300 leading-relaxed">
+        <p className="text-sm md:text-lg max-w-3xl mx-auto text-black leading-relaxed">
           Discover breathtaking destinations with our carefully curated group tours.
           Experience the beauty, culture, and adventure that awaits in these magnificent locations.
         </p>

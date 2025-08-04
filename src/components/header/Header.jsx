@@ -158,7 +158,7 @@ const Header = () => {
               {/* Decorative Frame */}
               <div className="absolute -inset-4 bg-gradient-to-r from-[#2FA8B9]/20 to-[#42a8bb]/20 rounded-3xl blur-xl"></div>
               <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
-                <Slider />
+                <Slider className="" />
               </div>
             </div>
           </div>
