@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, Users, MapPin, Eye } from 'lucide-react';
 import img3 from "../../assets/images/himalaya/himalaya.jpg";
+import { Link } from 'react-router-dom';
 const May = () => {
   const tours = [
     {
@@ -148,10 +149,10 @@ const May = () => {
                 </div>
 
                 <div className="mt-3 pt-3 border-t">
-                  <button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 px-4 rounded-md font-semibold transition-colors duration-200 flex items-center justify-center text-sm">
+                 <Link to={"/contact"}  className="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 px-4 rounded-md font-semibold transition-colors duration-200 flex items-center justify-center text-sm">
                     <Eye className="mr-2" size={14} />
-                    {tour.price === "Coming Soon" ? "View Details" : "View Tour Details"}
-                  </button>
+                   Contact Us
+                  </Link>
                 </div>
               </div>
             </div>
