@@ -26,7 +26,7 @@ const places = [
   {
     id: 3,
     name: "London",
-    country: "United States of America",
+    country: "United Kingdom", // Fixed country
     price: 500,
     rating: 4.5,
     reviews: 20,
@@ -45,7 +45,7 @@ const places = [
   },
   {
     id: 5,
-    name: "California",
+    name: "San Francisco", // Made name unique
     country: "United States of America",
     price: 500,
     rating: 4.5,
@@ -56,7 +56,7 @@ const places = [
   {
     id: 6,
     name: "Saintmartine Iceland",
-    country: "United States of America",
+    country: "Iceland", // Fixed country
     price: 500,
     rating: 4.5,
     reviews: 20,
@@ -128,85 +128,82 @@ const PopularPlaces = () => {
             Popular Places
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Suffered alteration in some form, by injected humour or good day 
-            randomised booth anim 8-bit hella wolf moon beard words.
+            Discover amazing destinations around the world. From bustling cities to serene landscapes, 
+            find your perfect getaway with our curated selection of popular travel destinations.
           </p>
         </div>
 
         {/* Places Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {places.map((place, index) => (
-            
-            <Link to={"/tours"}>
-            <div
-              key={place.id}
-              ref={(el) => cardRefs.current[index] = el}
-              data-card-id={place.id}
-              className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-700 transform hover:-translate-y-2 group ${
-                visibleCards.has(place.id) 
-                  ? 'translate-x-0 opacity-100' 
-                  : '-translate-x-full opacity-0'
-              }`}
-              style={{
-                transitionDelay: visibleCards.has(place.id) ? `${index * 150}ms` : '0ms'
-              }}
-            >
-              {/* Image Container */}
-              <div className="relative overflow-hidden">
-                <img
-                  src={place.image}
-                  alt={place.name}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {/* Price Badge */}
-                <div className="absolute top-4 left-4 bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  ${place.price}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                {/* Title and Country */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">
-                    {place.name}
-                  </h3>
-                  <p className="text-gray-500 text-sm">
-                    {place.country}
-                  </p>
+            <Link key={place.id} to="/tours" className="block">
+              <div
+                ref={(el) => cardRefs.current[index] = el}
+                data-card-id={place.id}
+                className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-700 transform hover:-translate-y-2 group ${
+                  visibleCards.has(place.id) 
+                    ? 'translate-x-0 opacity-100' 
+                    : '-translate-x-full opacity-0'
+                }`}
+                style={{
+                  transitionDelay: visibleCards.has(place.id) ? `${index * 150}ms` : '0ms'
+                }}
+              >
+                {/* Image Container */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={place.image}
+                    alt={place.name}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* Price Badge */}
+                  <div className="absolute top-4 left-4 bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    ${place.price}
+                  </div>
                 </div>
 
-                {/* Rating and Duration */}
-                <div className="flex items-center justify-between">
-                  {/* Rating */}
-                  <div className="flex items-center space-x-2">
-                    <div className="flex items-center space-x-1">
-                      {renderStars(place.rating)}
+                {/* Content */}
+                <div className="p-6">
+                  {/* Title and Country */}
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      {place.name}
+                    </h3>
+                    <p className="text-gray-500 text-sm">
+                      {place.country}
+                    </p>
+                  </div>
+
+                  {/* Rating and Duration */}
+                  <div className="flex items-center justify-between">
+                    {/* Rating */}
+                    <div className="flex items-center space-x-2">
+                      <div className="flex items-center space-x-1">
+                        {renderStars(place.rating)}
+                      </div>
+                      <span className="text-sm text-gray-600">
+                        ({place.reviews} Reviews)
+                      </span>
                     </div>
-                    <span className="text-sm text-gray-600">
-                      ({place.reviews} Reviews)
-                    </span>
-                  </div>
 
-                  {/* Duration */}
-                  <div className="flex items-center space-x-1 text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm">{place.duration}</span>
+                    {/* Duration */}
+                    <div className="flex items-center space-x-1 text-gray-600">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm">{place.duration}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </Link>
           ))}
         </div>
 
-        {/* More Places Button */}
+        {/* Contact Us Button */}
         <div className="text-center">
-          <Link to={"/contact"}>
-          <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Cantact Us
-          </button>
-            
+          <Link to="/contact">
+            <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              Contact Us
+            </button>
           </Link>
         </div>
       </div>

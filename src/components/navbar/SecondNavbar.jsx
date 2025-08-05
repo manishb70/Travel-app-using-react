@@ -109,7 +109,7 @@ const FancyNavbar = () => {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 text-black font-medium animate-fadeIn">
+                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 dark:text-white  text-black font-medium animate-fadeIn">
                     {navLinks.map(link => (
                         <Link
                             key={link.name}
