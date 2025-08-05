@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "../header/Header";
 import MostAttractive from "../mostattractive/MostAttractive";
 

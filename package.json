@@ -2,14 +2,12 @@
   "name": "travel",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://manishb70.github.io/Travel-app-using-react",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
