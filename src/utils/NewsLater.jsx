@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NewsLater = () => {
   return (
@@ -21,9 +22,11 @@ const NewsLater = () => {
             placeholder="Your mail"
             className="w-full md:w-auto px-4 py-3 rounded-md text-gray-900 outline-none"
           />
+          <Link to={"/contact"}>
           <button className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-md text-white font-medium">
             Subscribe
           </button>
+          </Link>
         </div>
       </div>
     </div>

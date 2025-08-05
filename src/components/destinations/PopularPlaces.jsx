@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Clock, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const places = [
   {
@@ -135,6 +136,8 @@ const PopularPlaces = () => {
         {/* Places Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {places.map((place, index) => (
+            
+            <Link to={"/tours"}>
             <div
               key={place.id}
               ref={(el) => cardRefs.current[index] = el}
@@ -193,14 +196,18 @@ const PopularPlaces = () => {
                 </div>
               </div>
             </div>
+            </Link>
           ))}
         </div>
 
         {/* More Places Button */}
         <div className="text-center">
+          <Link to={"/contact"}>
           <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            More Places
+            Cantact Us
           </button>
+            
+          </Link>
         </div>
       </div>
     </div>

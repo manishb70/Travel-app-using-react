@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import img1 from "../../assets/banner/banner.png";
 import img2 from "../../assets/banner/banner2.png";
 import img3 from "../../assets/banner/banner3.png";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -54,12 +55,12 @@ const HeroSlider = () => {
                   {slide.title}
                 </h2>
                 <p className="mb-6 text-lg">{slide.subtitle}</p>
-                <a
+                <Link to={"/tours"}
                   href="#"
                   className="inline-block bg-teal-500 text-white px-6 py-3 rounded hover:bg-teal-600 transition"
                 >
                   Explore Now
-                </a>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

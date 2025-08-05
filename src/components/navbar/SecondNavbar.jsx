@@ -15,10 +15,10 @@ import { Link, useLocation } from "react-router-dom";
 
 const FancyNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [mobileDropdown, setMobileDropdown] = useState({ pages: false, blog: false   ,tours: false});
+    const [mobileDropdown, setMobileDropdown] = useState({ pages: false, blog: false, tours: false });
     const location = useLocation();
 
-       const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -42,9 +42,8 @@ const FancyNavbar = () => {
     const isActive = (path) => location.pathname === path;
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-       isScrolled ? "bg-white shadow-md " : "bg-white/0 text-white "                                                        
-    }`}>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md " : "bg-white/0 text-white "
+            }`}>
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
@@ -123,65 +122,51 @@ const FancyNavbar = () => {
                     ))}
 
                     {/* Tours Dropdown - Mobile */}
-<div>
-    <button
-        onClick={() =>
-            setMobileDropdown({ ...mobileDropdown, tours: !mobileDropdown.tours })
-        }
-        className="flex justify-between items-center w-full hover:text-red-500"
-    >
-        Tours
-        <ChevronDown
-            size={16}
-            className={`${mobileDropdown.tours ? "rotate-180" : ""} transition`}
-        />
-    </button>
-    {mobileDropdown.tours && (
-        <div className="ml-4 mt-2 space-y-2">
-            {[
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-            ].map((month) => (
-                <Link
-                    key={month}
-                    to={`/${month.toLowerCase()}`}
-                    className="block hover:text-red-500 uppercase"
-                    onClick={() => setIsMenuOpen(false)}
-                >
-                    {month}
-                </Link>
-            ))}
-        </div>
-    )}
-</div>
-
-
-                    {/* Pages Dropdown */}
                     <div>
                         <button
-                            onClick={() => setMobileDropdown({ ...mobileDropdown, pages: !mobileDropdown.pages })}
-                            className="flex justify-between w-full hover:text-red-500"
+                            onClick={() =>
+                                setMobileDropdown({ ...mobileDropdown, tours: !mobileDropdown.tours })
+                            }
+                            className="flex justify-between items-center w-full hover:text-red-500"
                         >
-                            Pages <ChevronDown className={`${mobileDropdown.pages ? "rotate-180" : ""} transition`} size={16} />
+                            Tours
+                            <ChevronDown
+                                size={16}
+                                className={`${mobileDropdown.tours ? "rotate-180" : ""} transition`}
+                            />
                         </button>
-                        {mobileDropdown.pages && (
+                        {mobileDropdown.tours && (
                             <div className="ml-4 mt-2 space-y-2">
-                                <Link to="/gallery" className="block hover:text-red-500">Gallery</Link>
-                                <Link to="/faq" className="block hover:text-red-500">FAQ</Link>
-                                <Link to="/testimonials" className="block hover:text-red-500">Testimonials</Link>
+                                {[
+                                    "January",
+                                    "February",
+                                    "March",
+                                    "April",
+                                    "May",
+                                    "June",
+                                    "July",
+                                    "August",
+                                    "September",
+                                    "October",
+                                    "November",
+                                    "December",
+                                ].map((month) => (
+                                    <Link
+                                        key={month}
+                                        to={`/${month.toLowerCase()}`}
+                                        className="block hover:text-red-500 uppercase"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        {month}
+                                    </Link>
+                                ))}
                             </div>
                         )}
                     </div>
+
+
+                    {/* Pages Dropdown */}
+
 
                     {/* Blog Dropdown */}
                     <div>

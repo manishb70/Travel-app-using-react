@@ -5,6 +5,7 @@ import img3 from "../../assets/destinations/3.png";
 import img4 from "../../assets/destinations/4.png";
 import img5 from "../../assets/destinations/5.png";
 import img6 from "../../assets/destinations/6.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -55,7 +56,7 @@ const destinations = [
 
 const Destination = () => {
   return (
-    <section className="py-16 text-black bg-white" id="popular-destination">
+    <section className="py-16 text-black  bg-white" id="popular-destination">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Popular Destination</h2>
         <p className="text-gray-500 max-w-xl mx-auto mb-12">
@@ -65,9 +66,10 @@ const Destination = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {destinations.map((dest, index) => (
+          <Link to={"/tours"}>
             <div
               key={index}
-              className="relative rounded-lg overflow-hidden shadow-lg group"
+              className="relative rounded-lg cursor-pointer overflow-hidden shadow-lg group"
             >
               <img
                 src={dest.image}
@@ -81,6 +83,7 @@ const Destination = () => {
                 </span>
               </div>
             </div>
+              </Link>
           ))}
         </div>
       </div>

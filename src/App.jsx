@@ -1,7 +1,6 @@
 import Home from "./components/home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MostAttractive from "./components/mostattractive/MostAttractive";
-import ViewPoints from "./components/viewpoints/ViewPoints";
+
 import "./index.css";
 import React from "react";
 import BookingForm from "./utils/slider/BookingForm";
@@ -25,57 +24,38 @@ import AboutUs from "./components/aboutus/AboutUs";
 
 const App = () => {
 
-  // return (
-  //   <div className="font-montserrat bg-[#001E23]">
 
 
-  //     <Home />
-
-
-
-
-
-
-
-  //     {/* <MostAttractive />
-  //     <ViewPoints />
-  //     <BookingForm />    */}
-  //     {/* <Footer /> */}
-  //   </div>
-  // );
-
-
-  
 
 
 
   return (
-   
-      <Routes>
-        {/* Layout Route */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} /> {/* Default child */}
-          <Route path="/tours" element={<Tours />} /> Default child
-          <Route path="/upcoming" element={<Upcoming   />} /> Default child
-           <Route path="/contact" element={< BookingForm  />} /> Default child
-           <Route path="/January" element={<January   />} /> Default child
-           <Route path="/February" element={<Feburary   />} /> Default child
-           <Route path="/March" element={<March   />} /> Default child
-           <Route path="/April" element={<April   />} /> Default child
-           <Route path="/May" element={<May   />} /> Default child
-           <Route path="/June" element={<June   />} /> Default child
-           <Route path="/July" element={<July   />} /> Default child
-           <Route path="/August" element={<August   />} /> Default child
-           <Route path="/September" element={<September   />} /> Default child
-           <Route path="/October" element={<October   />} /> Default child
-           <Route path="/November" element={<November   />} /> Default child
-           <Route path="/December" element={<December   />} /> Default child
-           <Route path="/about" element={<AboutUs   />} /> Default child
-      
 
-        </Route>
-      </Routes>
-    
+    <Routes>
+      {/* Layout Route */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} /> {/* Default child */}
+        <Route path="/tours" element={<Tours />} /> Default child
+        <Route path="/upcoming" element={<Upcoming />} /> Default child
+        <Route path="/contact" element={< BookingForm />} /> Default child
+        <Route path="/January" element={<January />} /> Default child
+        <Route path="/February" element={<Feburary />} /> Default child
+        <Route path="/March" element={<March />} /> Default child
+        <Route path="/April" element={<April />} /> Default child
+        <Route path="/May" element={<May />} /> Default child
+        <Route path="/June" element={<June />} /> Default child
+        <Route path="/July" element={<July />} /> Default child
+        <Route path="/August" element={<August />} /> Default child
+        <Route path="/September" element={<September />} /> Default child
+        <Route path="/October" element={<October />} /> Default child
+        <Route path="/November" element={<November />} /> Default child
+        <Route path="/December" element={<December />} /> Default child
+        <Route path="/about" element={<AboutUs />} /> Default child
+
+
+      </Route>
+    </Routes>
+
   );
 
 }
