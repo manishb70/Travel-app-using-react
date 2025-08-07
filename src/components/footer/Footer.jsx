@@ -120,8 +120,8 @@ export default function TraveloFooter() {
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
           <p>
-            Copyright ©2025 All rights reserved | This template is made with ♡ by{' '}
-            <span className="text-red-500 font-medium">Colorlib</span>
+            Copyright ©2025 All rights reserved | 
+            <span className="text-red-500 font-medium"> Mice Travelo</span>
           </p>
         </div>
       </div>

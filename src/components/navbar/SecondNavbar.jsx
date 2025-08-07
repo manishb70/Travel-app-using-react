@@ -14,9 +14,12 @@ import {
 import { Link, useLocation } from "react-router-dom";
 
 const FancyNavbar = () => {
+
+     
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [mobileDropdown, setMobileDropdown] = useState({ pages: false, blog: false, tours: false });
     const location = useLocation();
+    const currentPath = location.pathname;
 
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -42,13 +45,17 @@ const FancyNavbar = () => {
     const isActive = (path) => location.pathname === path;
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md " : "bg-white/0 text-white "
-            }`}>
+     <header
+      className={`fixed top-0 left-0 w-[100vw] z-50 transition-all duration-300
+        ${isScrolled ? "bg-white shadow-md" : "bg-white/0 "}
+        ${!isScrolled && currentPath === "/tours" ? "text-white" : ""}
+      `}
+    >
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center gap-2">
                     <Compass className="text-red-500" size={28} />
-                    <h1 className="text-xl font-bold text-black">Mice Travelo</h1>
+                    <h1 className="text-xl font-bold ">Mice Travelo</h1>
                 </div>
 
                 {/* Desktop Nav */}
@@ -57,7 +64,7 @@ const FancyNavbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={`transition hover:text-red-500 ${isActive(link.path) ? "text-red-500" : "text-black"}`}
+                            className={`transition hover:text-red-500 ${isActive(link.path) ? "text-red-500" : ""}`}
                         >
                             {link.name}
                         </Link>
@@ -65,7 +72,7 @@ const FancyNavbar = () => {
 
                     {/* Tours Dropdown */}
                     <div className="relative group cursor-pointer">
-                        <div className="flex items-center gap-1 text-black hover:text-red-500 transition">
+                        <div className="flex items-center gap-1  hover:text-red-500 transition">
                             Tours <ChevronDown size={16} />
                         </div>
                         <div className="absolute top-full left-0 w-40 mt-2 backdrop-blur-md bg-black/60 text-white rounded-md shadow-md opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
@@ -84,7 +91,7 @@ const FancyNavbar = () => {
 
                 {/* Right Icons - Desktop */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <div className="flex items-center text-sm text-black font-medium gap-2">
+                    <div className="flex items-center text-sm  font-medium gap-2">
                         <PhoneCall className="text-red-500" size={16} />
                         10(256)-928 256
                     </div>
@@ -109,7 +116,7 @@ const FancyNavbar = () => {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 dark:text-white  text-black font-medium animate-fadeIn">
+                <div className="lg:hidden bg-white shadow-md px-6 pt-4 pb-6 space-y-4 dark:text-white   font-medium animate-fadeIn">
                     {navLinks.map(link => (
                         <Link
                             key={link.name}

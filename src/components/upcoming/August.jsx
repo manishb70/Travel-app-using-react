@@ -65,7 +65,7 @@ const August = () => {
             <h2 className="text-lg md:text-xl font-semibold">August</h2>
           </div>
           <p className="mt-3 text-sm font-medium tracking-wide">
-            SPECIALLY DESIGNED FOR SENIOR CITIZENS
+               Lorem ipsum dolor sit a
           </p>
         </div>
       </div>
@@ -75,7 +75,7 @@ const August = () => {
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-orange-600 mb-4">
-            Upcoming March Group Tours Exclusively For Senior Citizens
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
           </h1>
           
           <div className="max-w-3xl mx-auto mb-6">

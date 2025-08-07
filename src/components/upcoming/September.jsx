@@ -7,20 +7,20 @@ const September = () => {
     {
       id: 1,
       title: "Senior Citizen Jagannath Puri Group Tour",
-      duration: "4 Days / 3 Nights",
-      month: "March",
-      locations: "Bhubaneswar, Puri, Konark, Chilika Lake",
-      price: "Rs.44,900",
+      duration: "Lorem ipsum dolor sit amet.",
+      month: "Lorem",
+      locations: "Lorem ipsum dolor sit amet consectetur.",
+      price: "Lorem",
       image: "/api/placeholder/300/200",
       imageAlt: "Jagannath Temple with traditional architecture"
     },
     {
       id: 2,
       title: "Holi Celebration Senior Citizen Group Tour",
-      duration: "2 Night / 3 Days", 
-      month: "March",
-      locations: "Delhi - Bharatpur - Delhi",
-      price: "Rs.22,900",
+      duration: "Lorem ipsum dolor sit amet.",
+      month: "Lorem",
+      locations: "Lorem ipsum dolor sit amet consectetur.",
+      price: "Lorem",
       image: "/api/placeholder/300/200",
       imageAlt: "Colorful Holi celebration with people in traditional dress"
     },
@@ -28,17 +28,17 @@ const September = () => {
       id: 3,
       title: "Baku Azerbaijan Senior Citizen Group Tour",
       duration: "Coming Soon",
-      month: "March",
-      locations: "Baku, Azerbaijan",
+      month: "Lorem",
+      locations: "Lorem ipsum dolor sit amet consectetur.",
       price: "Coming Soon",
       image: "/api/placeholder/300/200",
       imageAlt: "Baku city skyline at night"
     },
     {
       id: 4,
-      title: "Ayodhya - Prayagraj - Varanasi Group Tour",
+      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       duration: "Coming Soon",
-      month: "March", 
+      month: "Lorem",
       locations: "Ayodhya, Prayagraj, Varanasi",
       price: "Coming Soon",
       image: "/api/placeholder/300/200",
@@ -60,7 +60,7 @@ const September = () => {
             <h2 className="text-lg md:text-xl font-semibold">September</h2>
           </div>
           <p className="mt-3 text-sm font-medium tracking-wide">
-            SPECIALLY DESIGNED FOR SENIOR CITIZENS
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
       </div>
@@ -69,13 +69,13 @@ const September = () => {
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-orange-600 mb-4">
-            Upcoming March Group Tours Exclusively For Senior Citizens
+          <h1 className="text-2xl md:text-3xl font-bold text-orange-600 mb-4"> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti 
           </h1>
           
           <div className="max-w-3xl mx-auto mb-6">
             <blockquote className="text-sm text-gray-600 italic leading-relaxed">
-              "We encourage Golden Agers to travel, learn, and discover new things. Explore the unique treasures that the fun-filled lifetime adventures have to give you. Onboard the journey that allows you to make new friends and enable you to discover yourself."
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quod neque ex accusamus quas voluptate sequi esse, soluta nostrum, minus, rerum at architecto deleniti error aliquam deserunt praesentium molestiae dicta!."
             </blockquote>
           </div>
 
@@ -83,15 +83,15 @@ const September = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             <div className="flex items-center justify-center bg-orange-50 p-3 rounded-lg">
               <MapPin className="text-orange-600 mr-2" size={16} />
-              <span className="text-orange-600 font-semibold text-sm">Elderly friendly itineraries</span>
+              <span className="text-orange-600 font-semibold text-sm">Lorem ipsum dolor sit.</span>
             </div>
             <div className="flex items-center justify-center bg-orange-50 p-3 rounded-lg">
               <Users className="text-orange-600 mr-2" size={16} />
-              <span className="text-orange-600 font-semibold text-sm">Like-minded, same-age co-travellers</span>
+              <span className="text-orange-600 font-semibold text-sm">Lorem ipsum dolor sit.</span>
             </div>
             <div className="flex items-center justify-center bg-red-50 p-3 rounded-lg">
               <Users className="text-red-600 mr-2" size={16} />
-              <span className="text-red-600 font-semibold text-sm">Assisted Groups</span>
+              <span className="text-red-600 font-semibold text-sm">Lorem ipsum dolor sit.</span>
             </div>
             <div className="flex items-center justify-center bg-blue-50 p-3 rounded-lg">
               <Users className="text-blue-600 mr-2" size={16} />
@@ -110,7 +110,7 @@ const September = () => {
                     {tour.title}
                   </h3>
                   <span className="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
-                    Upcoming Tour
+                    Lorem ipsum
                   </span>
                 </div>
 
@@ -141,13 +141,13 @@ const September = () => {
                       <div>
                         <span className="text-xl font-bold text-red-600">{tour.price}</span>
                         {tour.price !== "Coming Soon" && (
-                          <span className="text-xs text-blue-600 ml-2">Inclusive of GST PP</span>
+                          <span className="text-xs text-blue-600 ml-2">Lorem ipsum</span>
                         )}
                       </div>
                     </div>
                   </div>
                 </div>
-
+                
                 <div className="mt-3 pt-3 border-t">
                  <Link to={"/contact"}  className="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 px-4 rounded-md font-semibold transition-colors duration-200 flex items-center justify-center text-sm">
                     <Eye className="mr-2" size={14} />

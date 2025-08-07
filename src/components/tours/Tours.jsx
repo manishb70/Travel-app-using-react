@@ -10,6 +10,8 @@ import MostAttractive from "../mostattractive/MostAttractive";
 const Tours = () =>{
 
 
+  
+
     
   useEffect(() => {
     // Scroll to top when component loads (reload/refresh)

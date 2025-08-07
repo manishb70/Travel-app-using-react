@@ -1,12 +1,12 @@
 import React from "react";
 
 const BookingForm = () => (
-  <section className="bg-white py-12 px-4 md:px-24">
+  <section className="bg-white  py-12 px-4 md:px-24">
     <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
       <h2 className="text-2xl md:text-3xl font-bold text-red-700 mb-6">
         Book Your Trip / Contact Us
       </h2>
-      <form className="space-y-5">
+      <form className="space-y-5 ">
         <div>
           <label className="block mb-1 font-semibold text-gray-700" htmlFor="fullName">
             Full Name
