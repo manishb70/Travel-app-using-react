@@ -47,7 +47,7 @@ const FancyNavbar = () => {
     return (
      <header
       className={`fixed top-0 left-0 w-[100vw] z-50 transition-all duration-300
-        ${isScrolled ? "bg-white shadow-md" : "bg-white/0 "}
+        ${isScrolled ? "bg-white shadow-md" : "bg-white/0 text-white "}
         ${!isScrolled && currentPath === "/tours" ? "text-white" : ""}
       `}
     >

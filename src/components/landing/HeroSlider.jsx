@@ -42,7 +42,7 @@ const HeroSlider = () => {
         className="w-full h-full"
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide   key={index}>
             <div
               className="w-full h-full bg-cover bg-center flex items-center justify-center"
               style={{

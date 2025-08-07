@@ -41,7 +41,7 @@ const Slider = () => {
 
 
     return (
-        <div id="slidermain" className="mr-14 hero-swiper shadow-xl ">
+        <div id="slidermain" className="mr-14 heroswiper shadow-xl ">
 
 
             <Swiper
@@ -64,7 +64,7 @@ const Slider = () => {
                     places.map((item, i) => {
                         console.log(item);
                         return (
-                            <SwiperSlide key={i}>
+                            <SwiperSlide style={{ transform: 'scale(0.8)' }} key={i}>
                                 <div className="relative">
                                     <img src={item.img} alt="" />
                                     <div>sample text</div>

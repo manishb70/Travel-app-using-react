@@ -1,7 +1,7 @@
 #slidermain .swiper {
     width: 560px;
     height: 605px;
-}
+}   
 
  .swiper-slide {
     display: flex;
@@ -10,8 +10,11 @@
     font-size: 22px;
     font-weight: bold;
     color: white;
-    transform: scale(0.8) !important;
+    /* transform: scale(0.8) !important; */
+}
 
+.mastercss{
+    
 }
 
 #slidermain .swiper .swiper-slide-active img {

@@ -142,19 +142,19 @@ const MostAttractive = () => {
 
                     {/* Images positioned absolutely */}
                     <img src={infos.leftImg1} alt=""
-                        className="absolute top-[-13%] rotate-[-45deg] left-[-0px] w-100"
+                        className="absolute top-[-13%] rotate-[-45deg] left-[-0px] w-70"
                         data-aos="fade-right"
                         data-aos-delay="1000"
                         data-aos-duration="1000"
                     />
                     <img src={infos.leftImg2} alt=""
-                        className="absolute top-[0%] left-[30%] rotate-[-45deg] left-[-100px] w-[250px]"
+                        className="absolute top-[0%] left-[30%] rotate-[-45deg] left-[-100px] w-[200px]"
                         data-aos="fade-right"
                         data-aos-delay="1000"
                         data-aos-duration="1500"
                     />
                     <img src={infos.rightImg1} alt=""
-                        className="absolute top-[260px] rotate-[-45deg] right-[-00px] w-[400px]"
+                        className="absolute top-[260px] rotate-[-45deg] right-[-00px] w-[300px]"
                         data-aos="fade-left"
                         data-aos-delay="1000"
                         data-aos-duration="1000"

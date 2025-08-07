@@ -2,7 +2,7 @@ import { Facebook, Twitter, Instagram, MapPin, Youtube } from 'lucide-react';
 
 export default function TraveloFooter() {
   return (
-    <footer className="bg-slate-900 text-gray-300 py-16">
+    <footer className="bg-slate-900 text-gray-300 py-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -118,7 +118,7 @@ export default function TraveloFooter() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+        <div className="border-t border-gray-700 pt-8  text-center text-sm text-gray-400">
           <p>
             Copyright ©2025 All rights reserved | 
             <span className="text-red-500 font-medium"> Mice Travelo</span>
